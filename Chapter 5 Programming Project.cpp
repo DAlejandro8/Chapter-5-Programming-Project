@@ -2,10 +2,79 @@
 //
 
 #include <iostream>
-
+#include <cmath>
+using namespace std;
+//this code will make a pattern, Pattern A, followed by a second pattern, Pattern B
 int main()
 {
-    std::cout << "Hello World!\n";
+    //not to myself, Pattern A goes from 1-10, B goes 10-1
+
+    //This will be the beginning of Pattern A
+    int P = 1;//THIS IS THE VALUE FOR 1 BEACUSE BOTH START OR STOP AT ONE
+    int L = 10; //THIS IS THE VALUE FOR 10 AS BOTH INVOLVE 10
+    int PO = 1;
+    //ignore all variables defined above, essentially useless 
+    cout << "Pattern A\n";
+
+    for (int P=1; P <= 10; P++) {
+
+
+
+        for (int PO=1; PO <= P; PO++) {
+
+            cout << '+';//creates output
+        }
+       
+        
+        
+        
+        cout << endl;
+        
+        
+       
+    }
+
+    cout << "Pattern B\n";
+    //essentially identical to other code 
+    for (int P=10; P >= 1; P--) {//this is the only difference between the two
+
+
+
+        for (int PO=1; PO <= P; PO++) {
+
+            cout << '+';//creates output
+        }
+
+
+
+
+        cout << endl;
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
