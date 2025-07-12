@@ -2,7 +2,9 @@
 //
 
 #include <iostream>
-
+#include <cmath>
+using namespace std;
+#include <fstream> 
 int main()
 {
     std::cout << "Hello World!\n";
