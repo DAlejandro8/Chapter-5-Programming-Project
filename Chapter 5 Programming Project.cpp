@@ -3,11 +3,29 @@
 
 #include <iostream>
 #include <cmath>
-using namespace std;
 #include <fstream> 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    ifstream
+        inputFile("Lineup.txt");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
