@@ -4,27 +4,27 @@
 #include <iostream>
 #include <cmath>
 #include <fstream> 
-#include <random>
+#include <random>//some of these are not needed, but I put them here beforehand just incase; I don't know what I choose to use
 #include <string>
 using namespace std;
-
+//this program opens a preexisting file of names, counts them, and sees who's name is first and last alphabetically. 
 int main()
 {
 
     string NAME, FIRST, LAST;
 
     ifstream
-        inputFile("Lineup.txt");
+        inputFile("Lineup.txt");//file variable
     int count = 0;
     
     if (!inputFile) {
 
 
-        cout << "error opening file\n";
+        cout << "error opening file\n";//error message incase something goes wrong in openning the file
     }
     else {
 
-        while (getline(inputFile, NAME)) {
+        while (getline(inputFile, NAME)) {//loop to count name and to get order
 
             if (count == 0) {
 
@@ -34,7 +34,7 @@ int main()
 
 
             }
-            else {
+            else {//comparing name to see who is first
                 if (NAME < FIRST)
                     FIRST = NAME;
                 if(NAME > LAST)
@@ -55,7 +55,7 @@ int main()
         }
 
         inputFile.close();
-
+        //output of program
         cout << "Number of students:\t" << count << endl;
         cout << "Front of line      \t" << FIRST << endl;
         cout << "End of line        \t" << LAST << endl;
