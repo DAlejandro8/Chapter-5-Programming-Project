@@ -3,9 +3,71 @@
 
 #include <iostream>
 #include <random>
+#include <cmath>
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    bool VALID = false;
+    int GUESS;
+    while (!VALID) {
+        cout << "Guess the random number!\n";
+        random_device first;
+        uniform_int_distribution<int> randomReal(0, 50);
+        cin >> GUESS;
+        int Count=0;
+        Count++;
+        if (GUESS == randomReal(first))
+        {
+            cout << "Congratulations!\n";
+            cout << "You Guessed correctly\n";
+          
+            cout << Count << " Tries!\n";
+            bool VALID = true;
+
+
+        }
+
+        else if (GUESS > randomReal(first)){
+
+            cout << "Sorry, your guess is incorrect\n";
+        cout << "Your guess was too high\n";
+        cout << "Try Again\n";
+        cin.clear();
+        
+        }
+
+
+        else if (GUESS < randomReal(first)) {
+
+
+            cout << "Sorry, your guess is incorrect\n";
+            cout << "Your guess was too low\n";
+            cout << "Try Again\n";
+
+            cin.clear();
+
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
