@@ -9,42 +9,53 @@ int main()
 {
     bool VALID = false;
     int GUESS;
-    while (!VALID) {
+    random_device first;//sort the number generator
+    uniform_int_distribution<int> randomReal(0, 100);//the bounds of generator 1-100
+    
+    int Count = 0;//counter starts at 0
+    
+    int CORRECT = randomReal(first);
+    while (!VALID) {//loop until right
         cout << "Guess the random number!\n";
-        random_device first;
-        uniform_int_distribution<int> randomReal(0, 50);
-        cin >> GUESS;
-        int Count=0;
-        Count++;
-        if (GUESS == randomReal(first))
+        
+        cin >> GUESS;//input, the gues the user makes.
+       
+        Count++;//adds every loop
+        
+
+
+
+
+        if (GUESS == CORRECT)//has to be double equal sign
         {
-            cout << "Congratulations!\n";
+            VALID = true;//stops loop
+            cout << "Congratulations!\n";//the output once correct
             cout << "You Guessed correctly\n";
           
-            cout << Count << " Tries!\n";
-            bool VALID = true;
+            cout << Count << " Tries!\n";//number of tries that were taken
+            
 
 
         }
 
-        else if (GUESS > randomReal(first)){
+        else if (GUESS > CORRECT){
 
             cout << "Sorry, your guess is incorrect\n";
-        cout << "Your guess was too high\n";
+        cout << "Your guess was too high\n";//overestimate
         cout << "Try Again\n";
-        cin.clear();
+        cin.clear();//resets to top
         
         }
 
 
-        else if (GUESS < randomReal(first)) {
+        else if (GUESS < CORRECT) {
 
 
             cout << "Sorry, your guess is incorrect\n";
-            cout << "Your guess was too low\n";
+            cout << "Your guess was too low\n";//underestimate
             cout << "Try Again\n";
 
-            cin.clear();
+            cin.clear();//resets to tope
 
 
 
