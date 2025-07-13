@@ -5,12 +5,60 @@
 #include <cmath>
 #include <fstream> 
 #include <random>
+#include <string>
 using namespace std;
 
 int main()
 {
+
+    string NAME, FIRST, LAST;
+
     ifstream
         inputFile("Lineup.txt");
+    int count = 0;
+    
+    if (!inputFile) {
+
+
+        cout << "error opening file\n";
+    }
+    else {
+
+        while (getline(inputFile, NAME)) {
+
+            if (count == 0) {
+
+                FIRST = LAST = NAME;
+
+
+
+
+            }
+            else {
+                if (NAME < FIRST)
+                    FIRST = NAME;
+                if(NAME > LAST)
+
+                    LAST = NAME;
+
+
+
+
+            }
+
+
+            count++;
+
+
+
+
+        }
+
+        inputFile.close();
+
+        cout << "Number of students:\t" << count << endl;
+        cout << "Front of line      \t" << FIRST << endl;
+        cout << "End of line        \t" << LAST << endl;
 
 
 
@@ -20,6 +68,26 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    return 0;
 
 
 
