@@ -2,10 +2,94 @@
 //
 
 #include <iostream>
-
+#include <cmath>
+#include <fstream> 
+#include <random>
+#include <string>
+using namespace std;
+//this program will look for a file, then user must assign the nmae, and lastly will output stars represeting the population
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    string NAME, TOWN;
+    int YEAR = 1900;
+        int pop;//variable for population, will use file info for this
+    int INTERVAL = 20;
+
+    cout << "what is name of file?\n";
+    cin >> NAME;
+        cout << "enter town name\n";
+
+        cin.ignore();//had an issue and this fixed it, there was a stampede of text from later on in the program and this stopped it
+
+        getline(cin, TOWN);
+
+
+
+
+
+    ifstream//allows use of file, very important
+        FILE(NAME);//names the file for further use
+
+        
+        
+        if (!FILE) {//error message incase of wrong file or if file didn't open correctly
+
+            cout << "Error opening file";
+            return 0;
+        }
+
+
+        cout << TOWN << " Growth\n";
+        //these \n make things more readible at the end 
+
+        cout << "(Each Star is 1000 People)\n";//output part
+
+
+        while (FILE >> pop) {//looping to count the starts
+
+            cout << YEAR << " ";//output, part of it
+
+
+            for (int p = 0; p < pop / 1000; p++) {//calculation because each star is 1k
+
+                cout << "*";
+
+
+
+
+            }
+
+
+            cout << "\n";
+                YEAR += INTERVAL;
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+        FILE.close();//closing file, very important
+            return 0;
+
+
+
+
+
+
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
